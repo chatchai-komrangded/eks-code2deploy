@@ -26,14 +26,14 @@ Follow step by step, till you have finished "Test the Cluster"
     --query "cluster.resourcesVpcConfig.vpcId" \
     --output text)
 
-    echo $VPCID
+     echo $VPCID
 
 ---
 ## 3.) Create Security Group and Postgres Database using Amazon RDS
 
      RDSSG=$(aws ec2 create-security-group --group-name RDSDbAccessSG --description "Security group to apply to apps that need access to RDS" --vpc-id $VPCID --query "GroupId" --output text)
 
-    echo $RDSSG  
+     echo $RDSSG  
 
 Refering the step below to create Amazon RDS Postgres
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html#CHAP_GettingStarted.Creating.PostgreSQL
@@ -62,7 +62,9 @@ Save the following as postgres-test.yaml. Replace the HOST, DATABASE, and USER e
 from the step above where you created the RDS database.
 
     kubectl apply -f postgres-test.yaml
+
     kubectl describe pod postgres-test
+    
     kubectl describe pod postgres-test
 
 Challenge:
