@@ -11,6 +11,11 @@
 
 ## Pre-requisites
 - AWS Accounts
+
+- IAM user, please create before continue the lab
+
+    http://aws-core-services.ws.kabits.com/getting-started-with-iam
+
 --- 
 ## Lab 1: Amazon EKS from Code to Deploy
 
@@ -79,15 +84,72 @@ Challenge:
 
 ## Lab 2: Build your own CI/CD
 
-##  CI/CD WITH CODEPIPELINE
-    https://www.eksworkshop.com/intermediate/220_codepipeline/  
+##  2.1) Automated CI/CD WITH CODEPIPELINE with Cloudformation
+    https://www.eksworkshop.com/intermediate/220_codepipeline  
 
-Please Complete this lab before you Create Manual One Yourself. :)    
+Please Complete this lab before you Create Manual One Yourself.    
 
 Challenge:
 - You will face the error during Automated build, How can you investigate it?
 
+##  2.2) Automated CI/CD WITH CODEPIPELINE with Your own
 
+ 1.) Configure AWS CodeCommit: The easiest way to set up AWS CodeCommit is to configure HTTPS Git credentials for AWS CodeCommit. On the user details page in IAM console, choose the Security Credentials tab, and in HTTPS Git credentials for AWS CodeCommit, choose Generate.
+
+![HTTPS Git Credential](./img/codecommit-iam-gc1.png)
+
+
+2.) **_Create the AWS CodeCommit repository (console)_**
+
+1. Open the AWS CodeCommit console at <https://console.aws.amazon.com/codecommit>
+
+2. On the Welcome page, choose Get Started Now. (If a **_Dashboard_** page appears instead, choose **_Create repository_**.)
+3. On the **_Create repository_** page, in the **_Repository name_** box, type **_WebAppRepo_**.
+4. In the **_Description_** box, type **_My demonstration repository_**.
+5. Choose **_Create repository_** to create an empty AWS CodeCommit repository named **_WebAppRepo_**.
+
+**_Note_** The remaining steps in this tutorial assume you have named your AWS CodeCommit repository **_WebAppRepo_**. If you use a name other than **_WebAppRepo_**, be sure to use it throughout this tutorial. For more information about creating repositories, including how to create a repository from the terminal or command line, see [Create a Repository](http://docs.aws.amazon.com/codecommit/latest/userguide/how-to-create-repository.html).
+
+
+3.) Clone the Repo
+In this step, you will connect to the source repository created in the previous step. Here, you use Git to clone and initialize a copy of your empty AWS CodeCommit repository. Then you specify the user name and email address used to annotate your commits.
+
+From CodeCommit Console, you can get the https clone url link for your repo.
+Go to Cloud9 IDE terminal prompt
+Run git clone to pull down a copy of the repository into the local repo:
+    
+    git clone https://git-codecommit.<YOUR-REGION>.amazonaws.com/v1/repos/WebAppRepo
+
+Provide your Git HTTPs credential when prompted. You would be seeing the following message if cloning is successful. warning: You appear to have cloned an empty repository.
+
+
+4.) Commit changes to Remote Repo
+
+    git clone https://github.com/chatchai-komrangded/eks-workshop-sample-api-service-go.git
+
+    cp eks-workshop-sample-api-service-go/* WebAppRepo/
+
+    cd WebAppRepo/
+
+    git status .
+
+    git add .
+    
+    git commit -m "First commit"
+
+    git push origin master
+
+
+5.) At this stage you already successfully migrate code from external repo to fully managed private git. 
+
+Next Challenge:
+  - Best way to understand to reverse engineer from Cloudformation template, You will build your own CI/CD via AWS Console ! 
+
+  - Please follow instructor, We really need you to remember for every click.
+
+  - In case you forget !, You can refer How to build CI/CD from zero to deployment as below link
+  
+    https://aws.amazon.com/getting-started/hands-on/create-continuous-delivery-pipeline-codepipeline-codebuild/?trk=gs_card
 
 ---
 
@@ -107,4 +169,3 @@ Challenge:
 
  ## 5.) USING SPOT INSTANCES WITH EKS
     https://www.eksworkshop.com/beginner/150_spotworkers/       
-
