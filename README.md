@@ -11,9 +11,9 @@
 
 ## Pre-requisites
 - AWS Accounts
----
-## Step to follow How to Amazon CLI on S3
- 
+--- 
+## Lab 1: Amazon EKS from Code to Deploy
+
  ## 1.) Create EKS cluster with following lab url:
     https://www.eksworkshop.com/020_prerequisites/workspace/#region-3
 
@@ -64,7 +64,7 @@ from the step above where you created the RDS database.
     kubectl apply -f postgres-test.yaml
 
     kubectl describe pod postgres-test
-    
+
     kubectl describe pod postgres-test
 
 Challenge:
@@ -77,6 +77,19 @@ Challenge:
    
  # Congrats, You are ready to develop your code, and deploy to Amazon EKS !!!
 
+## Lab 2: Build your own CI/CD
+
+##  CI/CD WITH CODEPIPELINE
+    https://www.eksworkshop.com/intermediate/220_codepipeline/  
+
+Please Complete this lab before you Create Manual One Yourself. :)    
+
+Challenge:
+- You will face the error during Automated build, How can you investigate it?
+
+
+
+---
 
  ## Optional Useful Lab (Level 200-300)
 
@@ -86,8 +99,6 @@ Challenge:
  ## 2.) CI/CD WITH CODEPIPELINE
     https://github.com/aws-samples/amazon-eks-cicd-codebuild
 
-    https://www.eksworkshop.com/intermediate/220_codepipeline/      
-
  ## 3.) DEPLOYING MICROSERVICES TO EKS FARGATE
     https://www.eksworkshop.com/beginner/180_fargate/  
 
@@ -96,7 +107,4 @@ Challenge:
 
  ## 5.) USING SPOT INSTANCES WITH EKS
     https://www.eksworkshop.com/beginner/150_spotworkers/       
-
-
-# Congrats, You are ready to develop your code, and deploy to Amazon EKS !!!
 
