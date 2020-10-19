@@ -51,6 +51,7 @@ Challenge:
 ## 4.) Build docker and push to Amazon ECR
 
     docker build -t postgres-test .
+
     aws ecr create-repository --repository-name postgres-test-demo
     
     aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin <AWS ACCOUNT ID>.dkr.ecr.ap-southeast-1.amazonaws.com
@@ -143,11 +144,11 @@ Provide your Git HTTPs credential when prompted. You would be seeing the followi
 5.) At this stage you already successfully migrate code from external repo to fully managed private git. 
 
 Next Challenge:
-  - Best way to understand to reverse engineer from Cloudformation template, You will build your own CI/CD via AWS Console ! 
+  - Best way to understand is to Reverse engineer from Cloudformation template in step 2.1, You will Create AWS Codebuild project, and Creating CI/CD in AWS CodePipelines via AWS Console ! 
 
-  - Please follow instructor, We really need you to remember for every click.
+  - Please follow instructor, We really need you to remember, and undertand for every click.
 
-  - In case you forget !, You can refer How to build CI/CD from zero to deployment as below link
+  - In case you forget!, You can refer How to build CI/CD from zero to deployment as below link
   
     https://aws.amazon.com/getting-started/hands-on/create-continuous-delivery-pipeline-codepipeline-codebuild/?trk=gs_card
 
