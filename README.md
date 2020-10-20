@@ -205,6 +205,24 @@ Next Challenge:
     https://github.com/aws-samples/gitlab-to-codecommit-migration
 
 
+## Tip for Manage Multi Cluster
+
+Configures kubectl so that you can connect to an Amazon EKS cluster.
+
+    aws eks update-kubeconfig --name eksworkshop-eksctl
+
+## kubectl Cheat sheet
+
+https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+## docker Cheat sheet
+
+https://design.jboss.org/redhatdeveloper/marketing/docker_cheatsheet/cheatsheet/images/docker_cheatsheet_r3v2.pdf
+
+https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf
+
 ## Reference
 
 https://aws.amazon.com/blogs/containers/introducing-security-groups-for-pods
