@@ -98,6 +98,7 @@ Challenge:
 - How can you secure database credentials!! I do not want to store in kube manifest file.
 
 - Please reference to sample code here to use AWS Secret manager.
+    
     https://aws.amazon.com/th/secrets-manager/
 
     https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-python-example_code-secretsmanager.html    
