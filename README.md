@@ -53,6 +53,10 @@ Challenge:
 ---
 ## 4.) Build docker and push to Amazon ECR
 
+    git clone https://github.com/chatchai-komrangded/eks-code2deploy
+
+    cd eks-code2deploy
+
     docker build -t postgres-test .
 
     aws ecr create-repository --repository-name postgres-test-demo
@@ -173,3 +177,9 @@ Next Challenge:
 
  ## 5.) USING SPOT INSTANCES WITH EKS
     https://www.eksworkshop.com/beginner/150_spotworkers/       
+
+ ## 6.) Migration to CodeCommit
+    
+    https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html
+
+    https://github.com/aws-samples/gitlab-to-codecommit-migration
