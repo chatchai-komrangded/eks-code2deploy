@@ -1,13 +1,4 @@
 # Amazon EKS from Code to Deploy (Level 100-200)
-## Reference
-    https://aws.amazon.com/blogs/containers/introducing-security-groups-for-pods
-
-    https://github.com/awsdocs/amazon-eks-user-guide/blob/master/doc_source/security-groups-for-pods.md
-
-    https://github.com/awsdocs/amazon-eks-user-guide/blob/master/doc_source/cni-upgrades.md
-
-    https://eksworkshop.com
-
 
 ## Pre-requisites
 - AWS Accounts
@@ -15,6 +6,17 @@
 - IAM user, please create before continue the lab
 
     http://aws-core-services.ws.kabits.com/getting-started-with-iam
+
+## Recommended Knowledge
+- Docker, If you do not know docker, please make sure you take a look at the document below:
+
+    https://aws.amazon.com/th/docker/
+
+    https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+
+    https://docs.docker.com/get-started/
+
+- Basic Kubernetes
 
 --- 
 ## Lab 1: Amazon EKS from Code to Deploy
@@ -49,6 +51,9 @@ Note:
 Challenge:
 - How can you enable inbound traffic from EKS to be able to connect to Amazon RDS Postgres?
 
+- Please take a look document below for Reference:
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules
+
 
 ---
 ## 4.) Build docker and push to Amazon ECR
@@ -67,6 +72,8 @@ Challenge:
 
     docker push <AWS ACCOUNT ID>.dkr.ecr.ap-southeast-1.amazonaws.com/postgres-test-demo:latest
 
+ - Please change "AWS ACCOUNT ID" to AWS Account number.  
+
 ---
 ## 5.) Deploy Sample Application 
 
@@ -76,12 +83,19 @@ from the step above where you created the RDS database.
 
     kubectl apply -f postgres-test.yaml
 
-    kubectl describe pod postgres-test
+    kubectl get pod postgres-test
 
     kubectl describe pod postgres-test
+
+    kubectl get pod postgres-test
 
 Challenge:
-- How can you secure database credentials!! I do not want to store in kube manifest file..
+- How can you secure database credentials!! I do not want to store in kube manifest file.
+
+- Please reference to sample code here to use AWS Secret manager.
+    https://aws.amazon.com/th/secrets-manager/
+
+    https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-python-example_code-secretsmanager.html    
 
 ---
 ## 6.) Checking if your pod can connect to Amazon RDS Postgres 
@@ -166,20 +180,33 @@ Next Challenge:
  ## 1.) DEPLOY THE EXAMPLE MICROSERVICES
     https://www.eksworkshop.com/beginner/050_deploy/
 
- ## 2.) CI/CD WITH CODEPIPELINE
-    https://github.com/aws-samples/amazon-eks-cicd-codebuild
-
- ## 3.) DEPLOYING MICROSERVICES TO EKS FARGATE
+ ## 2.) DEPLOYING MICROSERVICES TO EKS FARGATE
     https://www.eksworkshop.com/beginner/180_fargate/  
 
- ## 4.) DEPLOYING STATEFUL MICROSERVICES WITH AWS EFS
+ ## 3.) DEPLOYING STATEFUL MICROSERVICES WITH AWS EFS
     https://www.eksworkshop.com/beginner/190_efs/     
 
- ## 5.) USING SPOT INSTANCES WITH EKS
+ ## 4.) USING SPOT INSTANCES WITH EKS
     https://www.eksworkshop.com/beginner/150_spotworkers/       
+
+ ## 5.) CI/CD WITH CODEPIPELINE
+    https://github.com/aws-samples/amazon-eks-cicd-codebuild
 
  ## 6.) Migration to CodeCommit
     
     https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html
 
     https://github.com/aws-samples/gitlab-to-codecommit-migration
+
+
+## Reference
+
+https://aws.amazon.com/blogs/containers/introducing-security-groups-for-pods
+
+https://github.com/awsdocs/amazon-eks-user-guide/blob/master/doc_source/security-groups-for-pods.md
+
+https://github.com/awsdocs/amazon-eks-user-guide/blob/master/doc_source/cni-upgrades.md
+
+https://docs.aws.amazon.com/eks/latest/userguide/pod-networking.html
+
+https://eksworkshop.com
