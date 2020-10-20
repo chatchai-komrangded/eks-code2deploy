@@ -57,7 +57,7 @@ Challenge:
 
     cd eks-code2deploy
 
-    docker build -t postgres-test .
+    docker build -t postgres-test-demo .
 
     aws ecr create-repository --repository-name postgres-test-demo
     
