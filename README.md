@@ -16,7 +16,12 @@
 
     https://docs.docker.com/get-started/
 
-- Basic Kubernetes
+- The Beginners Guide to Running Docker Containers on AWS
+
+    https://www.youtube.com/watch?v=brqgukelX6A
+
+    https://www.youtube.com/watch?v=lO2wU2rcGUw&t=674s
+
 
 --- 
 ## Lab 1: Amazon EKS from Code to Deploy
