@@ -43,6 +43,9 @@ Follow step by step, till you have finished "Test the Cluster"
 Refering the step below to create Amazon RDS Postgres
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html#CHAP_GettingStarted.Creating.PostgreSQL
 
+Note:
+- Please use "postgres" as username, and password.
+
 Challenge:
 - How can you enable inbound traffic from EKS to be able to connect to Amazon RDS Postgres?
 
