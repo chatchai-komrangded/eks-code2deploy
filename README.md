@@ -205,11 +205,15 @@ Next Challenge:
     https://github.com/aws-samples/gitlab-to-codecommit-migration
 
 
-## Tip for Manage Multi Cluster
+## Command Tip for EKS
 
 Configures kubectl so that you can connect to an Amazon EKS cluster.
 
     aws eks update-kubeconfig --name eksworkshop-eksctl
+
+To validate yaml format
+
+    cat postgres-test.yaml | yq r  postgres-test.yaml  
 
 ## kubectl Cheat sheet
 
